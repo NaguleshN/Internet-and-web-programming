@@ -1,0 +1,84 @@
+<html lang="en"> 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object display</title>
+</head>
+<body> 
+
+<h1>Object Display</h1> 
+
+<select name="select" id="select" title="Select Object to display"> 
+
+<option value="person">Person 1</option> 
+
+<option value="person2">Person 2</option> 
+
+</select> 
+
+<button onclick="displayObject()">Display Object</button> 
+
+<div id="output"></div> 
+
+ 
+
+<script> 
+
+ 
+
+function Person(name, department, college ,year) { 
+
+this.name = name; 
+
+this.department = department; 
+
+this.college = college; 
+
+this.year = year; 
+
+} 
+
+ 
+
+function displayObject() { 
+
+ 
+
+const person = new Person("Nagulesh", "CSE", "KCT" ,2026); 
+
+const person2 = new Person("Chaai", "IT", "KCT",2027); 
+
+ 
+
+const selectedValue = document.getElementById("select").value; 
+
+if (selectedValue === "person") { 
+
+obj = person; 
+
+} else if (selectedValue === "person2") { 
+
+obj = person2; 
+
+} 
+
+const outputElement = document.getElementById("output"); 
+
+outputElement.innerHTML = "<h2>Person Object:</h2>"; 
+
+outputElement.innerHTML += "<p>Name: " + obj.name + "</p>"; 
+
+outputElement.innerHTML += "<p>Department: " + obj.department + "</p>"; 
+
+outputElement.innerHTML += "<p>College: " + obj.college + "</p>"; 
+
+outputElement.innerHTML += "<p>passed out year: " + obj.year + "</p>"; 
+
+} 
+
+</script> 
+
+</body> 
+
+</html> 

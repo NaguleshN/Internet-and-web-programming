@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Searching</title>
+</head>
+
+<body>
+    <h1>Searching </h1>
+    <p>array is <span id="array"></span></p>
+    <label for="values">Enter the number to search</label>
+    <input type="text" name="" id="values" value="" />
+    <button onclick="linearSearching()"> linear Search</button>
+    <button onclick="binarySearching()">Binary Search</button>
+    <p id="display">output ..</p>
+    <script>
+        let array = [1, 2, 5, 67, 90, 234, 567, 89];
+        document.getElementById("array").innerHTML = array
+
+        function linearSearching() {
+            let string = document.getElementById("values").value;
+            let number = Number(string);
+            let count = 0;
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] == number) {
+                    count = 1;
+                }
+            }
+
+            if (count == 0) {
+                message = " Not found ";
+            }
+
+            else {
+                message = " found ";
+            }
+            document.getElementById("display").innerHTML = message;
+
+        }
+
+        function binarySearching() {
+            let string = document.getElementById("values").value;
+            let number = Number(string);
+            let low = 0;
+            let high = array.length - 1;
+            let count = 0;
+            let message = "";
+
+            while (low <= high) {
+                //let mid=Math.floor((low+high)/2);
+                let mid = low + Math.floor((high - low) / 2);
+                if (array[mid] == number) {
+                    message = "found" + number;
+                    count = 1;
+                    break;
+                }
+                else if (array[mid] < number) {
+                    low = mid + 1;
+                }
+                else {
+                    high = mid - 1;
+                }
+            }
+
+            if (count == 0) {
+                message = " not found " + number;
+            }
+            document.getElementById("display").innerHTML = message;
+        }
+
+    </script>
+</body>
+
+</html>

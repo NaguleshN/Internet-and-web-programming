@@ -1,0 +1,79 @@
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+  <body> 
+
+  <h1>Calculator</h1> 
+
+  <label for="value1">value 1</label> 
+  <input type="text" name="" id="value1" value="" /><br /> 
+  <label for="value2">value 2</label> 
+  <input type="text" name="" id="value2" value="" /><br /> 
+
+  <br /> 
+
+  <button onclick="add()"> ADD</button>  
+
+  <button onclick="sub()"> SUB</button> <br /> 
+
+  <button onclick="mul()"> MUL</button>  
+
+  <button onclick="div()"> DIV</button> <br /> 
+
+  <p class="display">Output is <span id="array"></span></p> 
+
+   
+
+  <script> 
+
+ 
+
+  function add(){ 
+
+  const num1= Number(document.getElementById("value1").value); 
+
+  const num2= Number(document.getElementById("value2").value); 
+
+    document.getElementById("array").innerHTML= num1+num2 ; 
+
+  } 
+
+   function sub(){ 
+
+  const num1= Number(document.getElementById("value1").value); 
+
+  const num2= Number(document.getElementById("value2").value); 
+
+    document.getElementById("array").innerHTML=num1-num2; 
+
+  } 
+
+  function mul(){ 
+
+  const num1= Number(document.getElementById("value1").value); 
+
+  const num2= Number(document.getElementById("value2").value); 
+
+    document.getElementById("array").innerHTML=num1*num2; 
+
+  } 
+
+  function div(){ 
+
+  const num1= Number(document.getElementById("value1").value); 
+
+  const num2= Number(document.getElementById("value2").value); 
+
+    document.getElementById("array").innerHTML=num1/num2; 
+
+  } 
+
+  </script> 
+
+  </body> 
+
+</html> 

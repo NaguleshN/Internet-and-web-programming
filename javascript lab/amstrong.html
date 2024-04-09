@@ -1,0 +1,64 @@
+<html lang="en"> 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amstrong</title>
+</head>
+  <body> 
+
+  <h1>Amstrong </h1> 
+
+  <label for="value1">Enter the value : </label> 
+
+  <input type="text" name="" id="value1" value="" /><br /> 
+
+  <br /> 
+
+  <button onclick="amstrong()"> Check </button>  
+
+  <p class="display">Output is <span id="array">none</span></p> 
+
+   
+
+<script> 
+
+  function amstrong(){ 
+
+    const num= Number(document.getElementById("value1").value); 
+
+    const digits = num.toString().split(''); 
+
+    const length = digits.length; 
+
+    let sum = 0; 
+
+    let message; 
+
+    for (let digit of digits) { 
+
+        sum += Math.pow(parseInt(digit), length); 
+
+    } 
+
+   if (num == sum){ 
+
+     message = " Amstrong  "  ; 
+
+   } 
+
+   else{ 
+
+     message = " Not Amstrong  " ; 
+
+   } 
+
+    document.getElementById("array").innerHTML= message ; 
+
+  }  
+
+  </script> 
+
+  </body> 
+
+</html> 
